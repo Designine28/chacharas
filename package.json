@@ -12,10 +12,16 @@
     "@ant-design/icons": "^4.7.0",
     "and": "^0.0.3",
     "antd": "^4.19.2",
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
     "next": "^12.1.0",
+    "nodemon": "^2.0.15",
+    "postrestql": "^1.0.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.28.1",
+    "sequelize": "^6.19.0",
+    "sqlite3": "^5.0.2",
     "sweetalert2": "^11.4.6"
   },
   "devDependencies": {

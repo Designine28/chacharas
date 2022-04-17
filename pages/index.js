@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { CopyOutlined,Input} from "antd";
 import Swal from "sweetalert2";
 import {  UserOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
 export default function Index() {
   const {
@@ -12,6 +13,16 @@ export default function Index() {
   } = useForm();
 
   function onSubmit(data) {
+    console.log("estos son los datos",data);
+    axios.post('http://localhost:3005/api/usuarios', {
+        nombre: data.firstName,
+        apellidos: data.lastName,
+        usuario: data.Email,
+        password: data.Password,
+    })
+    .then(response => {
+        console.log(response);
+    });
     Swal.fire({
       position: "center",
       icon: "success",
@@ -21,6 +32,7 @@ export default function Index() {
     });
   } // Su funcion de envio de formulario que invoca despues de una validacion exitosa
 
+ 
   console.log(watch("example")); // puede ver la entrada individual omitir el nombre de la entrada
 
   return (

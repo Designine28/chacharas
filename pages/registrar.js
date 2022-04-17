@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { CopyOutlined,Input} from "antd";
 import Swal from "sweetalert2";
 import {  UserOutlined } from '@ant-design/icons';
-
+import axios from 'axios';
 export default function Index() {
   const {
     register,
@@ -12,8 +12,17 @@ export default function Index() {
   } = useForm();
 
   function onSubmit(data) {
+    console.log("estos son los datos",data);
+    axios.post('http://localhost:3005/api/login', {
+        usuario: data.Email,
+        password: data.Password,
+    })
+    .then(response => {
+        console.log(response);
+    });
     Swal.fire({
       position: "center",
+
       icon: "success",
       title: "Su registro se ha guardado con exito",
       showConfirmButton: false,
