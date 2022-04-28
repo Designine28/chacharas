@@ -1,9 +1,9 @@
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.css';
 import "../styles/index.css";
+import '../styles/globals.css'
 
-
-
-export default ({Component, pageProps})=>{
-  return <Component {...pageProps}/>
-  
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
+
+export default MyApp
